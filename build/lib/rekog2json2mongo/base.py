@@ -33,7 +33,7 @@ client = boto3.client(
 
 def face2folder2mango(path):
     #collection={}
-    dr=os.listdir(path)[:3]
+    dr=os.listdir(path)
     print len(dr)
     
     n=0
