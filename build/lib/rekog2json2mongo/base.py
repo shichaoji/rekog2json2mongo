@@ -11,8 +11,9 @@ except:
     exit(0)
 
 print secret
-print secret.key
+print secret.aws_key
 print secret.mongo_user
 
 def face2folder2mango():
-    pass
+    print secret.key
+    print secret.mongo_pwd
