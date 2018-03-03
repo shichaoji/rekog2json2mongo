@@ -33,6 +33,8 @@ client = boto3.client(
 
 def face2folder2mango(path):
     #collection={}
+    if path[-1]!='/':
+        paht+='/'
     dr=os.listdir(path)
     print len(dr)
     
