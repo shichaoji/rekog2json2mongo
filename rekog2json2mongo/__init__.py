@@ -13,7 +13,7 @@ def main():
     elif flag.lower()=='c':  
         
         print 'starting Compare faces API'
-        print 'prepare a folder of images 
+        print 'prepare a folder of images with a collection of somename.jpg, somename_cpr.jpg'
         path=raw_input('path of folder that contains pictures (name.jpg, name_cpr.jpg collections) to compare: ')
         face2compare(path)        
         

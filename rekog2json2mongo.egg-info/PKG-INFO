@@ -1,6 +1,6 @@
 Metadata-Version: 1.1
 Name: rekog2json2mongo
-Version: 0.0.9
+Version: 0.1.0
 Summary: call AWS rekognition api, pushing local images, saving api results to json as well as mongodb
 Home-page: https://github.com/shichaoji/rekog2json2mongo
 Author: Shichao(Richard) Ji
