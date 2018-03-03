@@ -17,7 +17,7 @@ with open(os.path.join(_HERE, 'README.rst'),'r+') as fh:
 
 setup(
     name = "rekog2json2mongo",
-    version = "0.0.6",
+    version = "0.0.7",
     description = "call AWS rekognition api, pushing local images, saving api results to json as well as mongodb",
     long_description = long_description,
     author = "Shichao(Richard) Ji",

@@ -34,9 +34,15 @@ client = boto3.client(
 def face2folder2mango(path):
     #collection={}
     if path[-1]!='/':
-        paht+='/'
+        path+='/'
     dr=os.listdir(path)
-    print len(dr)
+    
+    print len(dr), 'files in the folder'
+    flag = int(raw_input('all many pics do you want to push? '))
+    if flag>=len(dr):
+        flag=len(dr)
+    dr=dr[0:flag]
+    print 'pushing...', len(dr)
     
     n=0
     start=time()
