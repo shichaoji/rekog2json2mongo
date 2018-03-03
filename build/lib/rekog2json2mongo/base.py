@@ -12,15 +12,24 @@ try:
     secret = imp.load_source('key','secret.py')
 except:
     print 'plase create secret.py with boto3, mongodb credentials'
+    print 'prepare a "secret.py" has aws_id="your AMI id", aws_key="your AMI key"'
+    
     exit(0)
 
 
 
+try:
+    mango = MongoClient(host='dsnotebook.bid', port=27017, username=secret.mongo_user, password=secret.mongo_pwd)
 
-mango = MongoClient(host='dsnotebook.bid', port=27017, username=secret.mongo_user, password=secret.mongo_pwd)
+    db=mango['explore']
+    coll=db['research']
+except:
+    mango = MongoClient(host='dsnotebook.bid', port=27017, username='face', password='rekognition')
 
-db=mango['explore']
-coll=db['research']
+    db=mango['explore']
+    coll=db['research']
+    
+    print 'no mango'
 
 
 client = boto3.client(
@@ -38,7 +47,11 @@ def face2folder2mango(path):
     dr=os.listdir(path)
     
     print len(dr), 'files in the folder'
-    flag = int(raw_input('all many pics do you want to push? '))
+    flag = raw_input('all many pics do you want to push (blank for all)? ')
+    if not flag.strip():
+        flag=len(dr)
+    
+    flag=int(flag)
     if flag>=len(dr):
         flag=len(dr)
     dr=dr[0:flag]

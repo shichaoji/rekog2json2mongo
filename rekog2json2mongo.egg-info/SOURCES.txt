@@ -2,6 +2,7 @@ README.rst
 setup.py
 rekog2json2mongo/__init__.py
 rekog2json2mongo/base.py
+rekog2json2mongo/compare.py
 rekog2json2mongo.egg-info/PKG-INFO
 rekog2json2mongo.egg-info/SOURCES.txt
 rekog2json2mongo.egg-info/dependency_links.txt
