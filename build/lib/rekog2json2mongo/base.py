@@ -34,6 +34,7 @@ except:
 
 client = boto3.client(
     'rekognition',
+    region_name='us-east-1',
     aws_access_key_id = secret.aws_id,
     aws_secret_access_key=secret.aws_key
 )
